@@ -1,1 +1,1 @@
-# Evaluaci-n-Diagn-stica
+# Evaluacion-Diagnostica
