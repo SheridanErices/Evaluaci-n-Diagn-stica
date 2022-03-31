@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Evaluación diagnóstica de Introducción al Desarrollo Front End con HTML, CSS y JavaScript" />
+        <meta name="keywords" content="HTML, CSS, JavaScript" />
+        <meta name="author" content="Sheridan Erices" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+            integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <title>Guía de Luz y Sombra</title>
+    </head>
+    <body>
+        <div id="uno"><strong><a href="index.html">PORTADA</a></strong></div>
+        <div id="otro"><a href="page_1.html">01</a> / <a href="page_2.html">02</a> / <a href="page_3.html">03</a></div>
+        <div>
+            <h1><span id="saludo"></span> a la guía para utilizar <span id="Contenido"></span></h1>
+            <p>Luces, sombras... ¡Acción! </p>
+            <p>¿Estás listo? En las siguientes páginas se te facilitará el uso correcto de luces y sombras, imprescindibles para todo artista que se inmersa en el mundo del arte en busca de dominar el dibujo y pintura. Te invitamos a conocer de manera interactiva su funcionamiento.</p>
+            <p>¡Manos a la obra!</p>
+        </div>
+        <script>
+var opciones = ["Welcome", "Benvenuto", "Bienvenido", "Bienvenu"];
+            function setup() {
+                createCanvas(windowWidth - 50, windowHeight - 50)
+                    .position(25, 30)
+                    .style("z-index", -1);
+                    document.getElementById("Contenido").textContent += "luces y sombras";
+                    document.getElementById("saludo").textContent += random(opciones);
+            }
+            function draw() {
+                background(34,34,35);
+                textSize(30);
+                text("🎨",mouseX,mouseY);
+                fill(20);
+                ellipse(mouseX+15, mouseY+30, 30,5);
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 50, windowHeight - 50);
+            }
+        </script>
+    </body>
+</html>

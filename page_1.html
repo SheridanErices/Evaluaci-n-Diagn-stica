@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Evaluación diagnóstica de Introducción al Desarrollo Front End con HTML, CSS y JavaScript" />
+        <meta name="keywords" content="HTML, CSS, JavaScript" />
+        <meta name="author" content="Sheridan Erices" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+        integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <title>Guía de Luz y Sombra 1</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+    </head>
+    <body>
+        <div id="uno"><a href="index.html">PORTADA</a></div>
+        <div id="otro"><strong><a href="page_1.html">01</a></strong> / <a href="page_2.html">02</a> / <a href="page_3.html">03</a></div>
+        <script>
+        function setup() {
+          createCanvas(windowWidth, windowHeight, WEBGL);
+          btn = createButton('Descargar');
+btn.position(windowWidth - 120, windowHeight - 50);
+btn.mousePressed(impresora);
+        }
+
+        function draw() {
+          background(0);
+
+          let locX = mouseX - height / 2;
+          let locY = mouseY - width / 2;
+
+          ambientLight(50);
+          directionalLight(255, 0, 0, 0.25, 0.25, 0);
+          pointLight(0, 0, 255, locX, locY, 250);
+
+          push();
+          translate(-width / 4, 0, 0);
+          rotateZ(frameCount * 0.02);
+          rotateX(frameCount * 0.02);
+          specularMaterial(250);
+          box(100, 100, 100);
+          pop();
+
+          translate(width / 4, 0, 0);
+          ambientMaterial(250);
+          sphere(120, 64);
+        }
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+          }
+          function impresora() {
+  saveCanvas("imagen", "jpg");
+}
+        </script>
+    </body>
+</html>
